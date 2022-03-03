@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -125,16 +126,24 @@
             display: flex;
             align-items: center;
             margin: 20px 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid grey;
+            justify-content: end;
         }
 
         .liste img {
             width: 55px;
             height: 50px;
             margin-right: 20px;
+            margin-left: -720px;
         }
 
         .liste li {
             list-style-type: none;
+        }
+
+        .fullname {
+            margin-left: -650px;
         }
 
         .liste a {
@@ -168,7 +177,7 @@ $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
     </nav>
 
     <main>
-    <div id="d1">
+        <div id="d1">
             <ul class="p">
                 <li><img src="../images/home.png"></li>
                 <li><a href="accueil.php">Accueil</a></li>
@@ -191,6 +200,7 @@ $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
 
             $sql1 = "select user1,user2 from amis where user1 = $id or user2 = $id";
             $result1 = mysqli_query($con, $sql1);
+
             while ($row1 = mysqli_fetch_assoc($result1)) {
                 $user1 = $row1["user1"];
                 $user2 = $row1["user2"];
@@ -203,7 +213,8 @@ $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
             ?>
                         <ul class="liste">
                             <li><img src="<?php echo ("../users/user_$iddes/$photo") ?>"></li>
-                            <li><a href="<?php echo ("newmessage.php?user=$user2") ?>"><?php echo ($row2["name"] . " " . $row2["surname"]) ?></a></li>
+                            <li><a href="#" class ="fullname" ><?php echo ($row2["name"] . " " . $row2["surname"]) ?></a></li>
+                            <li><a href="<?php echo ("newmessage.php?user=$user2") ?>">Envoyer Message</a></li>
                         </ul>
                     <?php
                     }
@@ -216,7 +227,8 @@ $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
                     ?>
                         <ul class="liste">
                             <li><img src="<?php echo ("../users/user_$iddes/$photo") ?>"></li>
-                            <li><a href="<?php echo ("newmessage.php?user=$user1") ?>"><?php echo ($row3["name"] . " " . $row3["surname"]) ?></a></li>
+                            <li><a href="#" class ="fullname" ><?php echo ($row3["name"] . " " . $row3["surname"]) ?></a></li>
+                            <li><a href="<?php echo ("newmessage.php?user=$user1") ?>">Envoyer Message</a></li>
                         </ul>
             <?php
                     }

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FaceBook - Connexion Ou Inscription</title>
     <style>
-         * {
+        * {
             margin: 0px;
             padding: 0px;
         }
@@ -15,6 +14,7 @@
         body {
             background-color: rgb(241, 241, 241);
         }
+
         nav {
             display: flex;
             align-items: center;
@@ -79,7 +79,7 @@
                 <li><input type="text" name="login" placeholder="Adresse e-mail" class="input" ></li>
                 <li><input type="password" name="pw" placeholder="Mot de passe" class="input" ></li>
                 <li><input type="submit" name="submit" value="SE CONNECTER" id="submit"></li>
-                <li><a href="actions/inscription.php">S'INSCRIRE</a></li>
+                <li><a href="inscription.php">S'INSCRIRE</a></li>
             </ul>
         </form>
     </nav>

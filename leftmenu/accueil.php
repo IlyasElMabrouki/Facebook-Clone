@@ -8,6 +8,7 @@
     <title>Accueil</title>
     <?php
     session_start();
+    $id = $_SESSION["id"];
     $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
     ?>
     <style>
@@ -219,8 +220,7 @@
             $con = mysqli_connect("localhost", "root", "ilyas-2002", "tp4");
             if (isset($_GET["searchbar"])) {
                 $data = $_GET["searchbar"];
-                $myid = $_SESSION["id"];
-                $sql = "select * from users where (name like '%$data%' or surname like '%$data%') and id != $myid";
+                $sql = "select * from users where (name like '%$data%' or surname like '%$data%') and id != $id";
                 $result = mysqli_query($con, $sql);
                 if (mysqli_num_rows($result) == 0) {
                     echo ("<p>Aucun Résultat</p>");
@@ -228,7 +228,6 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                         $iddes = $row["id"];
                         $photo = $row["photo"];
-                        $id = $_SESSION["id"];
             ?>
 
                         <ul class="liste">

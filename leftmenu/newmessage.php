@@ -204,7 +204,6 @@
         form {
             width: 100%;
             display: flex;
-            justify-content: space-between;
         }
 
         #textbox {
@@ -232,8 +231,8 @@
             width: 20%;
             color : white;
             cursor: pointer;
+            margin-right: -1px;
         }
-
 
         footer {
             width: 100%;
