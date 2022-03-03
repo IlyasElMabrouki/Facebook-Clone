@@ -182,22 +182,6 @@ $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
                 <li><img src="../images/home.png"></li>
                 <li><a href="accueil.php">Accueil</a></li>
             </ul>
-            <ul class="p">
-                <li><img src="../images/add.png"></li>
-                <li><a href="newmessage.php">Nouveau Message</a></li>
-            </ul>
-            <ul class="p">
-                <li><img src="../images/email.png"></li>
-                <li><a href="sendmessge.php">Messages Envoyés</a></li>
-            </ul>
-            <ul class="p">
-                <li><img src="../images/receive-mail.png"></li>
-                <li><a href="receivemessage.php">Messages Recus</a></li>
-            </ul>
-            <ul class="p">
-                <li><img src="../images/notification.png"></li>
-                <li><a href="notifications.php">Notifications</a></li>
-            </ul>
             <ul class="p" id="me">
                 <li><img src="../images/invite.png"></li>
                 <li><a href="ListeInvitations.php">Invitations</a></li>

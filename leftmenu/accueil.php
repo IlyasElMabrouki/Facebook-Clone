@@ -183,6 +183,7 @@
 </head>
 
 <body>
+
     <nav>
         <ul class="header_menu">
             <li><img src="../images/logo.png" alt="title" id="logo"></li>
@@ -204,22 +205,6 @@
                 <li><a href="accueil.php">Accueil</a></li>
             </ul>
             <ul class="p">
-                <li><img src="../images/add.png"></li>
-                <li><a href="newmessage.php">Nouveau Message</a></li>
-            </ul>
-            <ul class="p">
-                <li><img src="../images/email.png"></li>
-                <li><a href="sendmessge.php">Messages Envoyés</a></li>
-            </ul>
-            <ul class="p">
-                <li><img src="../images/receive-mail.png"></li>
-                <li><a href="receivemessage.php">Messages Recus</a></li>
-            </ul>
-            <ul class="p">
-                <li><img src="../images/notification.png"></li>
-                <li><a href="notifications.php">Notifications</a></li>
-            </ul>
-            <ul class="p">
                 <li><img src="../images/invite.png"></li>
                 <li><a href="ListeInvitations.php">Invitations</a></li>
             </ul>
@@ -239,8 +224,7 @@
                 $result = mysqli_query($con, $sql);
                 if (mysqli_num_rows($result) == 0) {
                     echo ("<p>Aucun Résultat</p>");
-                } 
-                else {
+                } else {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $iddes = $row["id"];
                         $photo = $row["photo"];

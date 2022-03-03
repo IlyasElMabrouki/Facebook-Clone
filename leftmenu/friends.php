@@ -174,22 +174,6 @@ $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
                 <li><a href="accueil.php">Accueil</a></li>
             </ul>
             <ul class="p">
-                <li><img src="../images/add.png"></li>
-                <li><a href="newmessage.php">Nouveau Message</a></li>
-            </ul>
-            <ul class="p">
-                <li><img src="../images/email.png"></li>
-                <li><a href="sendmessge.php">Messages Envoyés</a></li>
-            </ul>
-            <ul class="p">
-                <li><img src="../images/receive-mail.png"></li>
-                <li><a href="receivemessage.php">Messages Recus</a></li>
-            </ul>
-            <ul class="p">
-                <li><img src="../images/notification.png"></li>
-                <li><a href="notifications.php">Notifications</a></li>
-            </ul>
-            <ul class="p">
                 <li><img src="../images/invite.png"></li>
                 <li><a href="ListeInvitations.php">Invitations</a></li>
             </ul>
@@ -204,6 +188,7 @@ $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
             $con = mysqli_connect("localhost", "root", "ilyas-2002", "tp4");
             @session_start();
             $id = $_SESSION["id"];
+
             $sql1 = "select user1,user2 from amis where user1 = $id or user2 = $id";
             $result1 = mysqli_query($con, $sql1);
             while ($row1 = mysqli_fetch_assoc($result1)) {
@@ -218,7 +203,7 @@ $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
             ?>
                         <ul class="liste">
                             <li><img src="<?php echo ("../users/user_$iddes/$photo") ?>"></li>
-                            <li><a href="#"><?php echo ($row2["name"] . " " . $row2["surname"]) ?></a></li>
+                            <li><a href="<?php echo ("newmessage.php?user=$user2") ?>"><?php echo ($row2["name"] . " " . $row2["surname"]) ?></a></li>
                         </ul>
                     <?php
                     }
@@ -231,7 +216,7 @@ $photo = "../users/user_" . $_SESSION["id"] . "/" .  $_SESSION["photo"];
                     ?>
                         <ul class="liste">
                             <li><img src="<?php echo ("../users/user_$iddes/$photo") ?>"></li>
-                            <li><a href="#"><?php echo ($row3["name"] . " " . $row3["surname"]) ?></a></li>
+                            <li><a href="<?php echo ("newmessage.php?user=$user1") ?>"><?php echo ($row3["name"] . " " . $row3["surname"]) ?></a></li>
                         </ul>
             <?php
                     }
